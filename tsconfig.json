@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "outDir": "build",
+    "module": "CommonJS",
+    "moduleResolution": "Node",
+    "target": "es2020",
+    "esModuleInterop": true,
+    "sourceMap": true,
+    "baseUrl": ".",
+    "typeRoots": ["node_modules/@types"],
+    "types": ["node", "jest"],
+    "paths": {
+      "@/*": ["src/*"],
+      "@tests/*": ["tests/*"]
+    }
+  },
+  "include": ["src/**/*.ts", "tests/**/*.ts"]
+}

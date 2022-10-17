@@ -1,0 +1,39 @@
+{
+  "name": "currency",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run lint && npm run build && node build/index.js",
+    "start:dev": "ts-node-dev --respawn --transpile-only -r tsconfig-paths/register ./src/index.ts",
+    "test": "jest",
+    "build": "npm run clear && npx tsc --p tsconfig.build.json && tsc-alias -p tsconfig.build.json",
+    "clear": "rimraf build",
+    "lint": "eslint . --ext .ts",
+    "check": "prettier --check ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jest": "^29.1.2",
+    "@types/node": "^18.8.5",
+    "@typescript-eslint/eslint-plugin": "^5.40.0",
+    "@typescript-eslint/parser": "^5.40.0",
+    "eslint": "^8.25.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "jest": "^29.2.0",
+    "prettier": "2.7.1",
+    "rimraf": "^3.0.2",
+    "ts-jest": "^29.0.3",
+    "ts-node": "^10.9.1",
+    "ts-node-dev": "^2.0.0",
+    "tsc-alias": "^1.7.0",
+    "typescript": "^4.8.4"
+  },
+  "dependencies": {
+    "@apollo/server": "^4.0.1",
+    "graphql": "^16.6.0"
+  }
+}
