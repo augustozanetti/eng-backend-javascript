@@ -3,11 +3,11 @@ import { randomUUID } from "crypto";
 export class Quote {
   public readonly id: string;
 
-  public currencyCode: string;
+  public currency: string;
   public value: number;
 
-  constructor(currencyCode: string, value: number, id?: string) {
-    this.currencyCode = currencyCode;
+  constructor(currency: string, value: number, id?: string) {
+    this.currency = currency;
     this.value = value;
 
     this.id = id ?? randomUUID();

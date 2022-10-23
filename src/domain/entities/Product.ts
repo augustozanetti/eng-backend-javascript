@@ -1,29 +1,15 @@
 import { randomUUID } from "crypto";
 
-import { Money } from "@/domain/entities/Money";
-import { Currency } from "@/domain/entities/Currency";
-
 export class Product {
   public readonly id: string;
 
   public name: string;
-  private _money: Money;
+  public amount: number;
 
-  constructor(name: string, value: number, id?: string) {
+  constructor(name: string, amount: number, id?: string) {
     this.name = name;
-    this._money = this.buildMoney(value);
+    this.amount = amount;
+
     this.id = id ?? randomUUID();
-  }
-
-  private buildMoney(amount: number) {
-    const code = "BRL";
-    const currency = new Currency(code);
-    const money = new Money(currency, amount);
-
-    return money;
-  }
-
-  get money() {
-    return this._money;
   }
 }

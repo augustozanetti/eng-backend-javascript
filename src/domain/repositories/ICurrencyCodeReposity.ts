@@ -1,7 +1,7 @@
 import { Currency } from "@/domain/entities/Currency";
 
 export interface ICurrencyCodeRepository {
-  create: (currencyCode: Currency) => Promise<Currency>;
+  create: (input: Currency) => Promise<Currency>;
   read: () => Promise<Currency[]>;
-  delete: (code: string) => Promise<void>;
+  delete: (code: string) => Promise<boolean>;
 }

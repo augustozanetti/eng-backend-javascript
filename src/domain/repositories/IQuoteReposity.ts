@@ -4,5 +4,6 @@ export interface IQuoteRepository {
   create: (quote: Quote) => Promise<Quote>;
   read: () => Promise<Quote[]>;
   update: (quote: Quote) => Promise<Quote>;
-  delete: (id: string) => Promise<void>;
+  delete: (id: string) => Promise<boolean>;
+  findQuoteByCurrency: (currencies?: string[]) => Promise<Quote[]>;
 }
