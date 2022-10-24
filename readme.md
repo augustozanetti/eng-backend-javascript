@@ -4,6 +4,16 @@ Olá, pessoal! Espero que todos estejam bem! =)
 
 Gostaria de agradecer a oportunidade de realizar o teste e detalhar um pouco do que foi feito!
 
+### Pre-requirements
+
+Para o runtime de javascript, recomento [Node.js](https://nodejs.org/en/), recomendo usar [NVM \(Node Version Manager\)](https://github.com/nvm-sh/nvm).
+
+Estamos usando npm como nosso gerenciador de dependencias, instruções para instalação
+https://docs.npmjs.com/.
+
+Estou usando Docker para OS-level virtualization, para installar as instruções estão em
+https://docs.docker.com/get-docker/.
+
 Dado o requisito de multiplos clients que iriam consumir nossa api, resolvi utilizar graphql para que cada client possa criar a query e assim
 deixar mais fácil e performático.
 
@@ -17,16 +27,16 @@ Para facilitar e economizar tempo, subi dois bancos no docker compose, um especi
 
 Para rodar o projeto, testes, é necessário ter o node, npm, docker e docker compose instalados
 
-## Para rodar localmente em modo dev
+### Para rodar localmente em modo dev
 
 ```
-    - git clone https://github.com/augustozanetti/eng-gruposbf-backend-javascript.git
+    - clone esse repositorio ex: git clone https://github.com/augustozanetti/eng-gruposbf-backend-javascript.git ou git clone git@github.com:augustozanetti/eng-gruposbf-backend-javascript.git
     - npm run start:infra
     - npm install
     - npm run start:dev
 ```
 
-## Para rodar localmente com o projeto ja feito o build
+### Para rodar localmente com o projeto ja feito o build
 
 ```
     - npm run start:infra
@@ -36,7 +46,7 @@ Para rodar o projeto, testes, é necessário ter o node, npm, docker e docker co
 
 Para testar, disponibilizei uma collection do postman que pode ser usada, já está configurada para inserir dados das moedas que atendemos, só executar ela primeiro
 
-## Criação dos dados atráves da mutation
+### Criação dos dados atráves da mutation
 
 ```
     - rodar atráves do postman a mutation `addCurrency`
@@ -47,7 +57,7 @@ Para testar, disponibilizei uma collection do postman que pode ser usada, já es
 
 ```
 
-## Tests
+### Tests
 
 ```
     - npm run test

@@ -1,0 +1,295 @@
+{
+	"info": {
+		"_postman_id": "1a8c0f9f-1ea5-4dff-af54-bfb9c86922be",
+		"name": "currency",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "addCurrency",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation AddCurrency($code1: String!, $code2: String!, $code3: String!,$code4: String!) {\n  first: addCurrency(code: $code1) {\n    code\n  }\n  second: addCurrency(code: $code2) {\n    code\n  }\n  third: addCurrency(code: $code3) {\n    code\n  }\n  fourth: addCurrency(code: $code4) {\n    code\n  }\n}",
+						"variables": "{\n    \"code1\": \"BRL\",\n    \"code2\": \"USD\",\n    \"code3\": \"EUR\",\n    \"code4\": \"INR\"\n}\n"
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "currencies",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query Currencies {\n  currencies {\n    code\n  }\n}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addQuote",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation AddQuote($addQuoteInput1: AddQuoteInput!, $addQuoteInput2: AddQuoteInput!, $addQuoteInput3: AddQuoteInput!, $addQuoteInput4: AddQuoteInput!) {\n  first: addQuote(input: $addQuoteInput1) {\n    id\n    value\n    currency\n  }\n  secode: addQuote(input: $addQuoteInput2) {\n    id\n    value\n    currency\n  }\n  third: addQuote(input: $addQuoteInput3) {\n    id\n    value\n    currency\n  }\n  fourth: addQuote(input: $addQuoteInput4) {\n    id\n    value\n    currency\n  }\n}",
+						"variables": "{\n    \"addQuoteInput1\": {\n        \"currency\": \"BRL\",\n        \"value\": 1\n    },\n    \"addQuoteInput2\": {\n        \"currency\": \"USD\",\n        \"value\": 5.3953\n    },\n    \"addQuoteInput3\": {\n        \"currency\": \"EUR\",\n        \"value\": 6.3654\n    },\n    \"addQuoteInput4\": {\n        \"currency\": \"INR\",\n        \"value\": 0.07241359\n    }\n}"
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "quotes",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query Quote {\n  quotes {\n    id\n    currency\n    value\n  }\n}\n",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateQuote",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation UpdateQuote($input: UpdateQuoteInput!) {\n  updateQuote(input: $input) {\n    id\n    currency\n    value\n  }\n}",
+						"variables": "{\n    \"input\": {\n        \"id\": \"c51fe5c0-31af-4671-b870-3df8d4039a75\",\n        \"currency\": \"INR\",\n        \"value\": 0.07241359\n    }\n}"
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteQuote",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation DeleteQuote($id: ID!) {\n  deleteQuote(id: $id)\n}",
+						"variables": "{\n    \"id\": \"1\"\n}"
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteCurrency",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation DeleteCurrency($code: String!) {\n  deleteCurrency(code: $code)\n}",
+						"variables": "{\n    \"code\": \"1\"\n}"
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addProduct",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation Mutation($input: AddProductInput!) {\n  addProduct(input: $input) {\n    id\n    name\n    money {\n      amount\n      currency\n    }\n  }\n}\n",
+						"variables": "{\n    \"input\": {\n        \"name\": \"Tenis nike shox R4 - Masculino\",\n        \"value\": 52999\n    }\n}"
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "products",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query Products($currencies: [String!]) {\n  products {\n    id\n    name\n    money(currencies: $currencies) {\n      amount\n      currency\n    }\n  }\n}",
+						"variables": "{\n    \"currencies\":  []\n}"
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateProduct",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation UpdateProduct($input: UpdateProductInput!) {\n  updateProduct(input: $input) {\n    id\n    name\n    money {\n      amount\n      currency\n    }\n  }\n}",
+						"variables": "{\n    \"input\": {\n        \"id\": \"id\",\n        \"name\": \"name\",\n        \"value\": 1000\n    }\n}"
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteProduct",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation DeleteProduct($deleteProductId: ID!) {\n  deleteProduct(id: $deleteProductId) \n}\n",
+						"variables": "{\n    \"deleteProductId\": \"product-id\"\n}"
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
