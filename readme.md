@@ -44,15 +44,15 @@ Para rodar o projeto, testes, é necessário ter o node, npm, docker e docker co
     - npm run start
 ```
 
-Para testar, disponibilizei uma collection do postman que pode ser usada, já está configurada para inserir dados das moedas que atendemos, só executar ela primeiro
+Para testar, disponibilizei uma [collection](./currency.postman_collection.json) do postman que pode ser importada e usada, já está configurada para inserir dados das moedas que atendemos, só executar ela primeiro
 
 ### Criação dos dados atráves da mutation
 
 ```
-    - rodar atráves do postman a mutation `addCurrency`
-    - rodar atráves do postman a mutation `addQuote`
-    - rodar atráves do postman a mutation `addProduct`
-    - para listar todos os produtos e suas moedas rodar a query de `products`
+    - rodar atráves do postman a mutation addCurrency
+    - rodar atráves do postman a mutation addQuote
+    - rodar atráves do postman a mutation addProduct
+    - para listar todos os produtos e suas moedas rodar a query de products
     - no campo money podemos listar por moedas especificas ["BRL", "USD"] ou deixar nulo e listar todas moedas disponíveis
 
 ```
@@ -63,8 +63,10 @@ Para testar, disponibilizei uma collection do postman que pode ser usada, já es
     - npm run test
 ```
 
-![Alt text](./tests.png "Tests")
+![](./images/tests.png "Tests")
 
-![Alt text](./products.png "Add Product")
+![](./images/addProduct.png "Add Product")
 
-![Alt text](./filteredProducts.png "Filtered Products")
+![](./images/allProducts.png "All Products")
+
+![](./images/filteredProducts.png "Filtered Products")
