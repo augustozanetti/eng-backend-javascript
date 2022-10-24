@@ -5,6 +5,8 @@
     "moduleResolution": "Node",
     "target": "es2020",
     "esModuleInterop": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
     "sourceMap": true,
     "baseUrl": ".",
     "typeRoots": ["node_modules/@types"],
