@@ -5,12 +5,14 @@
   "main": "index.js",
   "scripts": {
     "start": "npm run lint && npm run build && node build/index.js",
-    "start:dev": "ts-node-dev --respawn --transpile-only -r tsconfig-paths/register ./src/index.ts",
-    "test": "jest",
+    "start:dev": "npm run lint && ts-node-dev --respawn --transpile-only -r tsconfig-paths/register ./src/index.ts",
+    "test": "jest --runInBand",
     "build": "npm run clear && npx tsc --p tsconfig.build.json && tsc-alias -p tsconfig.build.json",
     "clear": "rimraf build",
     "lint": "eslint . --ext .ts",
-    "check": "prettier --check ."
+    "check": "prettier --check .",
+    "recreate:db": "docker-compose down && docker-compose up -d",
+    "start:infra": "docker-compose up -d"
   },
   "keywords": [],
   "author": "",
@@ -30,10 +32,17 @@
     "ts-node": "^10.9.1",
     "ts-node-dev": "^2.0.0",
     "tsc-alias": "^1.7.0",
+    "tsconfig-paths": "^4.1.0",
+    "typedi": "^0.10.0",
     "typescript": "^4.8.4"
   },
   "dependencies": {
     "@apollo/server": "^4.0.1",
-    "graphql": "^16.6.0"
+    "dotenv": "^16.0.3",
+    "graphql": "^16.6.0",
+    "pg": "^8.8.0",
+    "reflect-metadata": "^0.1.13",
+    "typeorm": "^0.3.10",
+    "typeorm-extension": "^2.1.15"
   }
 }
