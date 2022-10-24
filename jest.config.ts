@@ -9,6 +9,7 @@ const config: Config = {
     "@tests/(.*)": "<rootDir>/tests/$1",
     "@/(.*)": "<rootDir>/src/$1",
   },
+  setupFilesAfterEnv: ["./tests/jest.setup.ts"],
 };
 
 export default config;

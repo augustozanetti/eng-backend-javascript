@@ -4,7 +4,7 @@ export const typeDefs = `#graphql
   }
   
   type Money {
-    amount: Int
+    amount: Int!
     currency: String!
   }
 
